@@ -1,0 +1,62 @@
+/* Padronização dos Elementos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+/* Definição dos Parâmetros para o Body */
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+    margin: 0;  
+    padding: 0;
+    display: flex;
+    justify-content: center;     /* alinhamento horizontal - eixo x*/    
+}
+
+/* Definição dos Parâmetros para o Container Principal (instagram-wrapper) - Conceito Flexbox*/
+.instagram-wrapper {
+    display: flex;
+    align-items: center;        /* alinhamento vertical - eixo y */
+    justify-content: start;     /* alinhamento horizontal - eixo x*/
+    width: 60%;
+    height: 100vh;
+}
+
+/* Definição dos Parâmetros para instagram-phone*/
+.instagram-phone {
+    display: flex;
+    align-items: center;        /* alinhamento vertical - eixo y */
+    justify-content: center;    /* alinhamento horizontal - eixo x*/
+    width: 50%;
+}
+
+/* Definição dos Parâmetros a imagem do Celular*/
+.instagram-phone img {
+    height: 50rem;
+}
+
+.instagram-continue {
+    display: flex;
+    align-items: center;             /* em função do flex-direction, passa representar o alinhamento horizontal */
+    justify-content: space-around;   /* em função do flex-direction, passa a representar o alinhamento vertical */
+    flex-direction: column;          /* muda a direção do alinhamento, invertendo os eixos (x para y) */
+    width: 50%;
+    height: 34rem;    
+}
+
+.instagram-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.3rem 0;
+    border: 1px solid lightgray;   
+}
