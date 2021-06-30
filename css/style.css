@@ -1,4 +1,4 @@
-/* Padronização dos Elementos */
+/* Pré-define os estilos ("Reseta"). */
 * {
     padding: 0;
     margin: 0;
@@ -8,7 +8,7 @@
     font-size: 14px;
 }
 
-/* Definição dos Parâmetros para o Body */
+/* Definição de parâmetros do Body. */
 body {
     width: 100%;
     min-height: 100vh;
@@ -16,19 +16,25 @@ body {
     margin: 0;  
     padding: 0;
     display: flex;
-    justify-content: center;     /* alinhamento horizontal - eixo x*/    
+    justify-content: center;     /* alinhamento horizontal - eixo x. */    
 }
 
-/* Definição dos Parâmetros para o Container Principal (instagram-wrapper) - Conceito Flexbox*/
-.instagram-wrapper {
+/* Estilização do elemento "a", padrão em toda a página */
+a {
+    text-decoration: none;
+    color: #0095f6;
+}
+
+/* Definição de parâmetros para o Container Principal (instagram-wrapper) - Conceito Flexbox. */
+.instagram-wrapper{
     display: flex;
-    align-items: center;        /* alinhamento vertical - eixo y */
-    justify-content: start;     /* alinhamento horizontal - eixo x*/
+    align-items: center;        /* alinhamento vertical - eixo y. */
+    justify-content: start;     /* alinhamento horizontal - eixo x. */
     width: 60%;
     height: 100vh;
 }
 
-/* Definição dos Parâmetros para instagram-phone*/
+/* Definição de parâmetros da classe instagram-phone - LADO ESQUERDO DA PÁGINA. */
 .instagram-phone {
     display: flex;
     align-items: center;        /* alinhamento vertical - eixo y */
@@ -36,27 +42,140 @@ body {
     width: 50%;
 }
 
-/* Definição dos Parâmetros a imagem do Celular*/
+/* Definição de parâmetros à imagem do Celular. */
 .instagram-phone img {
     height: 50rem;
 }
 
+/* Definição de parâmetros da classe Continue - LADO DIREITO DA PÁGINA. */
 .instagram-continue {
     display: flex;
-    align-items: center;             /* em função do flex-direction, passa representar o alinhamento horizontal */
-    justify-content: space-around;   /* em função do flex-direction, passa a representar o alinhamento vertical */
-    flex-direction: column;          /* muda a direção do alinhamento, invertendo os eixos (x para y) */
+    align-items: center;            /* em função do flex-direction em Column, passa a representar o alinhamento horizontal. */
+    justify-content: space-around;  /* em função do flex-direction em Column, passa a representar o alinhamento vertical. */
+                                    /* divide igualmente o espaço entre as margens laterais e os elementos. */
+    flex-direction: column;         /* muda a direção do alinhamento, invertendo os eixos (x para y e vice-versa). */
     width: 50%;
     height: 34rem;    
 }
 
-.instagram-group {
+/* Definição de parâmetros da classe Group. */
+.group {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    background-color: #ffffff;
+    justify-content: space-between; /* zera as margens laterais e divide os espaços igualmente entre os elementos. */
+    align-items: center;            
+    flex-direction: column;         
+    background-color: #ffffff;    
     width: 100%;
     padding: 1.3rem 0;
     border: 1px solid lightgray;   
+}
+
+/* Refere-se, em ordem sequencial, ao primeiro box que aparece na tela da classe Group. */
+.group:nth-child(1) {
+    min-height: 19rem;
+}
+
+/* Definição de parâmetro da classe instagram-logo. */
+.instagram-logo {
+    height: 3rem;
+}
+
+/* Definição de parâmetro da classe instagram-photo. */
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Definição de parâmetro da foto do perfil. */
+.profile-photo img {
+    height: 6rem;
+}
+
+/* Definição de parâmetro da classe instagram-login. */
+.instagram-login {
+    background-color: #0095f6;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Definição de parâmetro da classe instagram-logout. */
+.instagram-logout {
+  color: #0095f6;
+  margin-top: 1rem;  
+}
+
+/* Definição de parâmetro da classe not-account. */
+.not-account {
+    color: rgb(160, 160, 160);
+  }
+
+ /* Definição de parâmetro da classe link-blue. Substituído pela estilização do elemento "a".
+.link-blue {
+    color: #0095f6;
+  }
+*/
+
+.get-the-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.3rem 0;
+}  
+
+.download {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly; /* prioriza o espaçamento igual entre os elementos e divide igualmente a sobra entre as margens. */
+    align-items: center;
+    padding: 1rem;
+}
+
+.app-download {
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;        /* dimensionamento para ocupar todo o container. */
+}
+
+/* Refere-se, em ordem sequencial, ao primeiro elemento que aparece na tela da classe app-download. */
+.app-download:nth-child(1) {
+    background-image: url("../img/apple-button.png");    
+}
+
+/* Refere-se, em ordem sequencial, ao segundo elemento que aparece na tela da classe app-download. */
+.app-download:nth-child(2) {
+    background-image: url("../img/googleplay-button.png");
+}
+
+/* Ajustes responsivos - media queries*/
+
+/* Tablet  */
+@media(max-width:1024px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+}
+
+/* Smartphone  */
+@media(max-width:650px) {
+    body {
+        background-color: #ffffff;
+    }
+    .instagram-wrapper {
+        width: 90%;
+    }
+    .instagram-phone {
+        display: none;
+    }
+    .instagram-continue {
+        width: 100%;
+    }
+    .group {
+        border: 1px solid transparent;
+    }
 }
